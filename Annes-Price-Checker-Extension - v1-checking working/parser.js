@@ -3,7 +3,11 @@ const nightmare = require("nightmare")();
 //  url   https://www.amazon.com/Samsung-970-EVO-Plus-MZ-V7S1T0B/dp/B07MFZY2F2/ref=pd_lpo_1?pd_rd_i=B07MFZY2F2&psc=1
 // remove tracking info from url
 //  url   https://www.amazon.com/Samsung-970-EVO-Plus-MZ-V7S1T0B/dp/B07MFZY2F2
-
+// process.argv.slice(2) get the 3rd element , the url of the input when calling node parser
+// node parser.js url
+const args = process.argv.slice(2);
+const url = args[0];
+const minPrice = args[1];
 checkPrice();
 async function checkPrice() {
   // nightmare go to this website
